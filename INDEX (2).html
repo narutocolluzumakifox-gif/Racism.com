@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <style>
+  .images-row img {
+    width: 200px;            /* adjust as needed */
+    border-radius: 10px;     /* curved edges */
+    transition: 0.3s ease;   /* smooth hover effect */
+  }
+
+  .images-row img:hover {
+    border-radius: 25px;     /* more curved on hover */
+    transform: scale(1.05);  /* slight zoom */
+  }
+</style>
+
+<div class="images-row">
+    <img src="2download.png" alt="Image 1">
+    <img src="3download.jpg" alt="Image 2">
+</div>
+
+  
+<meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Racism Awareness — Home</title>
+  <style>
+    :root{
+      --accent:#0b63a3;
+      --muted:#666;
+      --card:#fbfbfc;
+      --border:#e6e6e6;
+      --radius:10px;
+      --bg:#f4f7fb; /* soft blue/white */
+      --text:#12213a;
+    }
+    *{box-sizing:border-box}
+    body{
+     
+ margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      color:var(--text);
+      background:var(--bg);
+      line-height:1.5;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    /* Header / Nav */
+    header{position:sticky;top:0;background:linear-gradient(90deg,#ffffff,#eef6fd);border-bottom:1px solid var(--border);z-index:60}
+    .nav{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:10px 18px;gap:12px}
+    .brand{font-weight:800;font-size:20px;color:var(--accent)}
+    nav.primary{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+    nav.primary a{color:var(--accent);text-decoration:none;font-weight:600;padding:6px 8px;border-radius:6px}
+    nav.primary a.active, nav.primary a:hover{background:#e6f0f9}
+
+    .sidebar-toggle{display:none;background:var(--accent);color:#fff;padding:8px 10px;border-radius:8px;border:none;cursor:pointer}
+
+    /* Layout */
+    .container{max-width:1100px;margin:28px auto;padding:0 18px}
+    .hero{padding:22px 18px}
+    h1{font-size:40px;margin:6px 0;color:var(--accent)}
+    .quote{font-size:18px;color:var(--muted);margin-top:6px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:22px}
+    .card{border:1px solid var(--border);border-radius:var(--radius);padding:16px;background:var(--card)}
+    h2{font-size:22px;margin:0 0 8px}
+    p{margin:8px 0;color:#223148}
+
+    footer{border-top:1px solid var(--border);padding:20px;text-align:center;color:var(--muted);font-size:14px;margin-top:40px;background:#fff}
+
+    /* Pages (hash-routing) */
+    .page{display:none}
+    .page.active{display:block;padding:18px 0}
+
+    /* Q&A */
+    .qa-item{border:1px solid var(--border);border-radius:8px;padding:12px;background:#fff;cursor:default}
+    .qa-title{cursor:pointer;font-weight:700}
+    .qa-answer{display:none;padding-top:8px;color:#222}
+
+    /* Mobile */
+    @media (max-width:760px){
+      nav.primary{display:none}
+      .sidebar-toggle{display:inline-block}
+    }
+
+    /* small helpers */
+    .muted{color:var(--muted)}
+    .btn{display:inline-block;padding:8px 12px;border-radius:8px;background:var(--accent);color:#fff;text-decoration:none;border:none;cursor:pointer}
+    .placeholder-img{width:100%;height:160px;background:#f0f0f0;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#999}
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="nav">
+      <div class="brand" aria-hidden>Racism</div>
+
+      <nav class="primary" aria-label="Primary navigation">
+        <a href="#home" data-link>Home</a>
+        <a href="#learn" data-link>Learn</a>
+        <a href="#how" data-link>How</a>
+        <a href="#role" data-link>Your Role</a>
+        <a href="#report" data-link>Report</a>
+        <a href="#help" data-link>Help</a>
+        <a href="#glossary" data-link>Glossary</a>
+        <a href="#about" data-link>About</a>
+        <a href="#contact" data-link>Contact</a>
+      </nav>
+
+      <button class="sidebar-toggle" aria-expanded="false" aria-controls="mobileMenu" onclick="toggleMobileMenu()">Menu</button>
+    </div>
+  </header>
+
+  <!-- Mobile menu -->
+  <div id="mobileMenu" style="display:none;padding:12px;border-bottom:1px solid var(--border);background:#fff">
+    <div style="max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:8px">
+      <!-- Using same links (data-link) so handlers will work -->
+      <a href="#home" data-link style="color:var(--accent)">Index</a>
+      <a href="#learn" data-link style="color:var(--accent)">Learn</a>
+      <a href="#how" data-link style="color:var(--accent)">How</a>
+      <a href="#role" data-link style="color:var(--accent)">Your Role</a>
+      <a href="#report" data-link style="color:var(--accent)">Report</a>
+      <a href="#help" data-link style="color:var(--accent)">Help</a>
+      <a href="#resources" data-link style="color:var(--accent)">Resources</a>
+      <a href="#stories" data-link style="color:var(--accent)">Stories</a>
+      <a href="#activities" data-link style="color:var(--accent)">Activities</a>
+      <a href="#glossary" data-link style="color:var(--accent)">Glossary</a>
+      <a href="#about" data-link style="color:var(--accent)">About</a>
+      <a href="#contact" data-link style="color:var(--accent)">Contact</a>
+    </div>
+  </div>
+
+  <main class="container" id="app">
+    <!-- HOME -->
+    <section id="home" class="page">
+      <div class="hero">
+        <h1 id="homeTitle">Racism</h1>
+        <div class="quote">"Racism can be learned — and so can equality. Choose kindness, choose respect."</div>
+
+        <div class="grid" style="margin-top:22px">
+          <div class="card">
+            <h2>What is Racism?</h2>
+            <p>Racism is unfair treatment or prejudice toward people because of their race, skin color, or ethnic background. It can be individual, cultural, or systemic, and harms communities and opportunities.</p>
+            <p><a class="btn" href="#learn" data-link>Learn More</a></p>
+          </div>
+
+          <div class="card">
+            <h2>How to Stop It</h2>
+            <p>Learn, speak up, and support fairness. Small actions add up and create safer, kinder communities.</p>
+            <p><a class="btn" href="#how" data-link>See Steps</a></p>
+          </div>
+
+          <div class="card">
+            <h2>Need Help?</h2>
+            <p>If you or someone you care about faces racism, there are steps and resources that can help you stay safe and find support.</p>
+            <p><a class="btn" href="#report" data-link>Get Help</a></p>
+          </div>
+        </div>
+
+        <div style="margin-top:26px" class="card">
+          <h2>Quick Links</h2>
+          <p class="muted">Jump to any section:</p>
+          <div style="display:flex;flex-wrap:wrap;gap:10px">
+            <a class="btn" href="#learn" data-link>Learn</a>
+            <a class="btn" href="#how" data-link>How</a>
+            <a class="btn" href="#role" data-link>Your Role</a>
+            <a class="btn" href="#resources" data-link>Resources</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LEARN -->
+    <section id="learn" class="page" aria-labelledby="learnTitle">
+      <h2 id="learnTitle">Learn — Key Ideas</h2>
+      <div style="max-width:980px;margin:12px auto">
+        <p><strong>Individual racism</strong> refers to personal beliefs and actions that hurt someone because of their race. This includes insults, microaggressions, and unequal treatment.</p>
+        <p><strong>Systemic racism</strong> exists in institutions and systems that create unequal outcomes for different groups — in education, housing, employment, and justice.</p>
+        <p><strong>Cultural racism</strong> devalues certain cultures and presents others as the default. It shows up in media, textbooks, and everyday assumptions.</p>
+
+        <h3>Why learning helps</h3>
+        <p>Education breaks stereotypes and builds empathy. Learning facts, listening to lived experiences, and reflecting on history make it easier to stand up to unfairness.</p>
+
+        <h3>Further reading ideas</h3>
+        <ul>
+          <li>Read personal stories and first-person accounts.</li>
+          <li>Explore historical context and systemic examples.</li>
+          <li>Use trusted educational sites and library resources.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- HOW -->
+    <section id="how" class="page" aria-labelledby="howTitle">
+      <h2 id="howTitle">How to Stop Racism</h2>
+      <div style="max-width:980px;margin:12px auto">
+        <p>Stopping racism begins with awareness and continues through action. Below are practical, everyday steps you can take:</p>
+
+        <ol>
+          <p>Stopping racism requires long-term effort from individuals, communities, and society as a whole, and it begins with awareness. The first step is educating ourselves by understanding the history of racism, how it harms people, and why it still exists today. When people learn about different cultures, beliefs, and backgrounds, they become more open minded and less likely to judge others unfairly. Another important step is challenging stereotypes, which means refusing to believe negative ideas about groups of people based on their skin color or ethnicity. Instead, we should focus on seeing each person as an individual with their own personality, talents, and experiences. We can also help stop racism by speaking up when we witness discrimination. This does not always mean confrontation; it can simply be telling a teacher, standing by the person who was targeted, or calmly pointing out why something is wrong. Progress also happens when we create inclusive environments such as schools, workplaces, and online spaces where everyone feels safe, respected, and heard. Practicing empathy is crucial as well, because trying to understand how others feel helps us treat people with kindness and fairness. Finally, stopping racism involves reflecting on our own behavior and being willing to change. Even small actions such as using respectful language, supporting diversity, correcting misinformation, and treating everyone equally play a role. When many people make these positive choices every day, society becomes more equal, more respectful, and free from discrimination..</p>
+        </ol>
+
+        <p class="note"><strong>Reminder:</strong> Mistakes happen. Apologize, learn, and keep trying — progress is a journey.</p>
+      </div>
+    </section>
+
+    <!-- ROLE -->
+    <section id="role" class="page" aria-labelledby="roleTitle">
+      <h2 id="roleTitle">Your Role Against Racism</h2>
+      <div style="max-width:980px;margin:12px auto">
+        <p>Your willingness to be kind, to listen, and to act makes a difference. Here are concrete ways you can help:</p>
+        <ul>
+          <p> Every person has a meaningful role in reducing racism, and your actions, even the smallest ones, matter more than you might imagine. Your role begins with awareness—understanding how words, behaviors, and assumptions can affect others. From there, your responsibility grows through the choices you make each day: choosing respect, choosing fairness, and choosing to speak up when something feels wrong. You help create a more inclusive environment by noticing when someone is being treated unfairly, offering support, and encouraging positive conversations. Learning about different cultures and perspectives helps you avoid stereotypes and builds empathy. When you challenge harmful jokes, question unfair treatment, or simply treat everyone with dignity, you are contributing to real change. Your role isn't about being perfect, but about being willing to grow, reflect, and stand for what is right. By acting with kindness and equality, you help shape a safer, more understanding world for everyone.</P>
+      </div>
+    </section>
+
+    <!-- REPORT -->
+    <section id="report" class="page" aria-labelledby="reportTitle">
+      <h2 id="reportTitle">Report Racism — What to Do</h2>
+      <div style="max-width:980px;margin:12px auto">
+        <p>If you or someone else experiences racism, safety is first. These steps can help you respond and document the incident:</p>
+        <ul>
+         <p> Your role in preventing racism begins with understanding its impact and recognizing how everyday actions can either challenge or support unfair treatment. By choosing to treat all people with respect, you help create a more inclusive environment where everyone feels valued. Speaking up when you witness discrimination, supporting those who are targeted, and encouraging others to act fairly are meaningful ways to make a difference. Educating yourself about different cultures and perspectives also helps reduce stereotypes and promotes empathy. Even small decisions, such as using respectful language or correcting misinformation, contribute to positive change. Taking responsibility for your actions and encouraging fairness in your community strengthens the fight against racism and helps build a society based on equality and dignity for everyone.</P>
+        </ul>
+        <h3>Demo Report Form</h3>
+        <p class="muted">This demo form does not submit data.This is an exempler form.</p>
+        <form onsubmit="alert('Demo only — replace with a real handler.'); return false;">
+          <label>Full name (optional)</label>
+          <input type="text" placeholder="Your name">
+          <label>Email (optional)</label>
+          <input type="email" placeholder="you@example.com">
+          <label>Date & time</label>
+          <input type="text" placeholder="YYYY-MM-DD and time">
+          <label>Location</label>
+          <input type="text" placeholder="Where it happened">
+          <label>Details</label>
+          <textarea rows="6" placeholder="Describe what happened"></textarea>
+          <div style="margin-top:8px"><button class="btn" type="submit">Submit Report (Demo)</button></div>
+        </form>
+      </div>
+    </section>
+
+    <!-- ABOUT US -->
+    <section id="about" class="page" aria-labelledby="helpTitle">
+      <h2 id="aboutitle">Help & FAQ</h2>
+      <div style="max-width:980px;margin:12px auto">
+        <p class="muted">Click any question to reveal the answer.</p>
+        <div style="margin-top:12px">
+          <div class="qa-item" onclick="toggleQA(this)">
+            <div class="qa-title">Why is this site trustworthy?</div>
+            <div class="qa-answer">This website is trustable because it is based on accurate, well-researched information about racism and equality. Every section is written clearly and responsibly, with the goal of educating and raising awareness rather than spreading opinions or misinformation. The content is explained in simple, reliable terms so that anyone can understand it. The website also encourages respect, fairness, and positive behavior, which makes it a safe and dependable source for learning about racism and how to stop it.</div>
+          </div>
+
+          <div class="qa-item" style="margin-top:10px" onclick="toggleQA(this)">
+            <div class="qa-title">Who should use this site?</div>
+            <div class="qa-answer">This website is designed for anyone who wants to learn more about racism and understand how to promote equality in their community. Students, teachers, and parents can use it to find clear and reliable information. It is also helpful for people who want to improve their awareness, support others, or become better allies. Because the content is simple, respectful, and educational, this website can be used by anyone who cares about fairness and wants to make a positive difference..</div>
+          </div>
+
+          <div class="qa-item" style="margin-top:10px" onclick="toggleQA(this)">
+            <div class="qa-title"> What inspired me to create this website? </div>
+            <div class="qa-answer">I was inspired to create this website because I wanted to spread awareness about racism in a simple and understandable way. Many people want to learn about equality but do not know where to start. By sharing clear information and helpful guidance, I hope to encourage others to think more carefully about their actions and learn how they can contribute to a more respectful and fair community.</div>
+          </div>
+ <div class="qa-item" style="margin-top:10px" onclick="toggleQA(this)">
+            <div class="qa-title">What is the purpose of this website </div>
+            <div class="qa-answer">The purpose of this website is to educate, inform, and inspire. It aims to help people understand what racism is, why it happens, and what they can do to stop it. The content is written to be easy to follow, reliable, and supportive for anyone who wants to make a positive difference. My goal is to create a safe space where learning leads to awareness and awareness leads to change. </div>
+          <div class="qa-item" style="margin-top:10px" onclick="toggleQA(this)">
+            
+            <div class="qa-title">What do I hope people learn from this website?</div>
+            <div class="qa-answer">I hope people who visit this website walk away with a clearer understanding of what racism truly is and how it affects others. My goal is to make learning simple and accessible so that anyone—no matter their age—can understand the importance of fairness, empathy, and respect. If someone becomes more aware, more confident in speaking up, or more thoughtful in their actions, then the website is doing its job. </div>
+<div class="qa-item" style="margin-top:10px" onclick="toggleQA(this)">
+            
+            <div class="qa-title">How do I make sure the information I share is reliable</div>
+            <div class="qa-answer"> To keep the content trustworthy, I make sure the information is based on widely accepted knowledge, common educational sources, and simple explanations used in real learning environments. I avoid personal opinions and focus only on facts, awareness, and positive values. I also keep everything clear, easy to understand, and suitable for all age groups, so the website remains a safe and dependable resource. </div>
+
+             </div>
+        
+         </div>
+      </div>
+    </section>
+
+ 	
+
+   
+  
+
+    <!-- GLOSSARY -->
+    <section id="glossary" class="page" aria-labelledby="glossaryTitle">
+      <h2 id="glossaryTitle">Glossary — Important Terms</h2>
+      <div style="max-width:980px;margin:12px auto">
+        <dl>
+          <<dt><strong>Racism</strong></dt>
+<dd>Unfair treatment or prejudice toward someone because of race or ethnicity.</dd>
+
+<dt><strong>Prejudice</strong></dt>
+<dd>Pre-formed negative opinions about a group without knowing individuals.</dd>
+
+<dt><strong>Stereotype</strong></dt>
+<dd>Oversimplified ideas about a group that ignore personal differences.</dd>
+
+<dt><strong>Systemic racism</strong></dt>
+<dd>Institutions and systems producing unequal outcomes for some groups.</dd>
+
+<dt><strong>Inclusion</strong></dt>
+<dd>Practices that make sure everyone feels welcome and valued.</dd>
+
+<dt><strong>Equality</strong></dt>
+<dd>Giving everyone the same chances and treating all people fairly.</dd>
+
+<dt><strong>Diversity</strong></dt>
+<dd>The presence of different cultures, backgrounds, and identities in one place.</dd>
+
+<dt><strong>Bias</strong></dt>
+<dd>Unfair opinions or judgments people make about others without knowing them well.</dd>
+
+<dt><strong>Discrimination</strong></dt>
+<dd>Unfair treatment of someone because of their race, color, religion, or other differences.</dd>
+
+<dt><strong>Empathy</strong></dt>
+<dd>Understanding how another person feels and caring about their experiences.</dd>
+
+<dt><strong>Respect</strong></dt>
+<dd>Treating people kindly and valuing their thoughts, feelings, and rights.</dd>
+
+<dt><strong>Awareness</strong></dt>
+<dd>Recognizing issues, problems, or situations that need attention or understanding.</dd>
+
+<dt><strong>Justice</strong></dt>
+<dd>Making sure rules, rights, and laws are fair for everyone.</dd>
+
+ 
+        </dl>
+      </div>
+    </section>
+
+    <!-- HELP -->
+    <section id="help" class="page" aria-labelledby="aboutTitle">
+      <h2 id="helptitle">help </h2>
+<h2 id="helpTitle">Help — What to do if you have a problem</h2>
+
+  <div style="max-width:980px;margin:12px auto;line-height:1.6;color:#223148">
+    <p>If you experience or witness racism, feeling safe comes first. Below are clear steps you can follow depending on the situation.</p>
+
+    <h3>Immediate safety</h3>
+    <p>
+      If you are in danger or feel threatened, move to a safe place and call your local emergency number right away.
+      If the situation is not an emergency but you feel unsafe, try to get to a public area, find people who can help, or contact a trusted adult.
+    </p>
+
+    <h3>Document what happened</h3>
+    <ol>
+      <li>Write down the date, time, and exact location of the incident.</li>
+      <li>Describe clearly what was said or done and who was involved (names or descriptions).</li>
+      <li>Note any witnesses and collect their contact information if possible.</li>
+      <li>Save any digital evidence such as screenshots, messages, photos, or videos.</li>
+    </ol>
+
+    <h3>Report the incident</h3>
+    <p>Where to report depends on where it happened:</p>
+    <ul>
+      <li><strong>At school:</strong> Tell a teacher, counselor, or principal and share your notes.</li>
+      <li><strong>At work:</strong> Contact HR, a manager, or a union representative and give them the facts.</li>
+      <li><strong>Online:</strong> Use the platform's report tools and save evidence of the content.</li>
+      <li><strong>Crimes or threats:</strong> Report to local police and provide your documentation.</li>
+    </ul>
+
+    <h3>Find support</h3>
+    <p>You do not have to handle this alone. Reach out for emotional and practical help:</p>
+    <ul>
+      <li>Talk with friends or family you trust.</li>
+      <li>See a counselor or mental health professional for emotional support.</li>
+      <li>Contact local community organizations, helplines, or NGOs that support victims of discrimination.</li>
+    </ul>
+
+    <h3>Self-care and next steps</h3>
+    <p>Experiencing racism can be upsetting. Take time to rest, speak to supportive people, and do things that help you feel safe. If you want to take action later, you can:</p>
+    <ul>
+      <li>Share your story anonymously to raise awareness (only if you feel comfortable).</li>
+      <li>Join school or community groups that promote inclusion.</li>
+      <li>Learn about bystander response techniques so you can help safely in future situations.</li>
+    </ul>
+
+    <h3>Quick links and resources</h3>
+    <p>
+      <a class="btn" href="#report" data-link>How to report (detailed)</a>
+      <a class="btn" href="#resources" data-link style="margin-left:8px">Find resources</a>
+      <a class="btn" href="https://forms.gle/aoLuWQ75f9ASYgPE9" target="_blank" rel="noopener" style="margin-left:8px">Contact / Feedback Form</a>
+    </p>
+
+    <h3>Frequently asked questions</h3>
+    <div style="margin-top:12px">
+      <div class="qa-item" onclick="toggleQA(this)">
+        <div class="qa-title">Who should I tell if something happens?</div>
+        <div class="qa-answer">Tell a trusted adult such as a parent, teacher, or manager. If the situation involves immediate danger, call emergency services first.</div>
+      </div>
+
+      <div class="qa-item" style="margin-top:10px" onclick="toggleQA(this)">
+        <div class="qa-title">What if the incident happened online?</div>
+        <div class="qa-answer">Take screenshots, block the offender, report the content to the platform, and save any messages. You can also report to your school or workplace if relevant.</div>
+      </div>
+
+      <div class="qa-item" style="margin-top:10px" onclick="toggleQA(this)">
+        <div class="qa-title">Can I stay anonymous when reporting?</div>
+        <div class="qa-answer">Some schools, workplaces, and platforms allow anonymous reports. Check their policies. For legal action you may need to share more details.</div>
+      </div>
+    </div>
+
+    <h3 style="margin-top:18px">If you still need help</h3>
+    <p>If the information above does not answer your question or you want personal guidance, use the contact form below or the external form link. We will not share your personal information without consent.</p>
+
+    <!-- simple contact link (opens Google Form in new tab) -->
+    <p style="margin-top:8px">
+      <a href="https://forms.gle/aoLuWQ75f9ASYgPE9" target="_blank" rel="noopener" class="btn">Open Contact Form</a>
+      <a href="#contact" data-link class="btn" style="margin-left:8px">Contact on this site</a>
+    </p>
+
+    <p class="muted" style="margin-top:14px; font-size:13px">
+      If you are in immediate danger, call your local emergency services right now. If you are unsure who to contact in your area, search for local helplines or community support organizations.
+    </p>
+  </div>
+</section>
+   
+
+
+    <!-- CONTACT -->
+  <section id="contact" class="page" aria-labelledby="contactTitle"> <h2 id="contactTitle">Contact</h2> 
+<div style="max-width:850px;margin:14px auto;line-height:1.7;color:#223148">
+
+    <p>If you have questions, suggestions, or want to report an issue, feel free to reach out. You can use the built-in form below or visit the external Google Form.</p>
+
+    <!-- GOOGLE FORM BUTTON -->
+    <p style="margin-top:10px;">
+      <a href="https://forms.gle/aoLuWQ75f9ASYgPE9" 
+         target="_blank" 
+         rel="noopener" 
+         class="btn">
+         Open Google Contact Form
+      </a>
+    </p>
+
+    <hr style="margin:18px 0">
+
+    <h3>Send a Message</h3>
+    <p>Fill in your details and I will get back to you soon.</p>
+
+    <!-- SIMPLE CONTACT FORM -->
+    <form style="display:flex;flex-direction:column;gap:12px;max-width:600px;">
+
+      <label>
+        Name:
+        <input type="text" required 
+               style="width:100%;padding:8px;border:1px solid #aaa;border-radius:6px;">
+      </label>
+
+      <label>
+        Email:
+        <input type="email" required
+               style="width:100%;padding:8px;border:1px solid #aaa;border-radius:6px;">
+      </label>
+
+      <label>
+        Message:
+        <textarea required rows="5"
+                  style="width:100%;padding:8px;border:1px solid #aaa;border-radius:6px;"></textarea>
+      </label>
+
+      <button type="submit" 
+              style="padding:10px 16px;border:none;border-radius:6px;cursor:pointer;background:#3366cc;color:white;font-size:15px;">
+        Send Message
+      </button>
+
+    </form>
+
+    <p style="margin-top:10px;font-size:14px;color:#556;">
+      Note: For private or more detailed submissions, use the Google Form linked above.
+    </p>
+
+  </div>
+</section>
+    <footer>
+      © <span id="year"></span> Racism Awareness — Built by me • Content for education and awareness only
+    </footer>
+  </main>
+
+  <script>
+    /* Robust link handling: use delegation for any element with data-link */
+    function handleNavigationClicks() {
+      document.body.addEventListener('click', function(e) {
+        const a = e.target.closest('[data-link]');
+        if (!a) return;
+        e.preventDefault();
+        const href = a.getAttribute('href') || '#home';
+        const id = href.replace('#','') || 'home';
+        if (location.hash !== '#'+id) {
+          history.pushState(null,'', '#'+id);
+        }
+        showPage(id);
+      });
+    }
+
+    function showPage(id) {
+      // hide all
+      document.querySelectorAll('.page').forEach(s => s.classList.remove('active'));
+      const el = document.getElementById(id);
+      if (!el) {
+        // default to home
+        document.getElementById('home').classList.add('active');
+        document.title = 'Racism Awareness — Home';
+      } else {
+        el.classList.add('active');
+        // update document title
+        const heading = el.querySelector('h2, h1');
+        document.title = heading ? ('Racism Awareness — ' + heading.innerText) : 'Racism Awareness';
+      }
+      // update active nav link
+      document.querySelectorAll('nav.primary a').forEach(a => {
+        const aId = (a.getAttribute('href') || '').replace('#','');
+        a.classList.toggle('active', aId === id);
+      });
+      // close mobile menu if open
+      const mm = document.getElementById('mobileMenu');
+      if (mm && mm.style.display === 'block') mm.style.display = 'none';
+      const btn = document.querySelector('.sidebar-toggle');
+      if (btn) btn.setAttribute('aria-expanded','false');
+      window.scrollTo({top:0,behavior:'instant'});
+    }
+
+    function toggleQA(item) {
+      const ans = item.querySelector('.qa-answer');
+      if (!ans) return;
+      ans.style.display = ans.style.display === 'block' ? 'none' : 'block';
+    }
+
+    function toggleMobileMenu() {
+      const mm = document.getElementById('mobileMenu');
+      const btn = document.querySelector('.sidebar-toggle');
+      if (mm.style.display === 'block') {
+        mm.style.display = 'none';
+        btn.setAttribute('aria-expanded','false');
+      } else {
+        mm.style.display = 'block';
+        btn.setAttribute('aria-expanded','true');
+      }
+    }
+
+    function init() {
+      handleNavigationClicks();
+      // on load, go to hash or home
+      const start = location.hash.replace('#','') || 'home';
+      showPage(start);
+      // year
+      const y = document.getElementById('year');
+      if (y) y.innerText = new Date().getFullYear();
+      // close mobile menu if window resizes to desktop
+      window.addEventListener('resize', ()=> {
+        if (window.innerWidth > 760) {
+          const mm = document.getElementById('mobileMenu');
+          if (mm) mm.style.display = 'none';
+        }
+      });
+      // support back/forward
+      window.addEventListener('popstate', ()=> {
+        const target = location.hash.replace('#','') || 'home';
+        showPage(target);
+      });
+    }
+
+    init();
+  </script>
+
+</body>
+</html>
